@@ -12,3 +12,6 @@ Efficient algorithms for calculating collisions were presented in 2004.
 Evil.py and good.py are two files with the same MD5 hash but act differently using code
 conditioned on the SHA256 hash of the padding.
 
+The writeup.txt talks about how using an HMAC would avoid the vulnerability I took advantage
+of in the length extension attack.
+
