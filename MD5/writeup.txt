@@ -1,0 +1,15 @@
+Lucie Mugnier
+Collaborators: None
+Sources: None
+Days Late Used: 0
+Days Late Remaining: 3
+
+The original token construction was exceptionally weak.  We were able to take advantage of the 
+length-extension properties of MD5 to create valid tokens without the user's knowledge. A far
+more secure option would be to use a keyed hash function or HMAC.  If the key were the user's
+password then in order to hash anything, one would need the user's password.  This is a much
+more secure proposal because, supposing only the user and the server know the password, they are
+the only two entities who can actually hash or check the hash of a value.  This way the adversary,
+assuming they do not know the password, cannot forge a valid token.
+We couldn't use our length extension attack because in order to set the initial state for the 
+hash function, we would need to use the key or password.
