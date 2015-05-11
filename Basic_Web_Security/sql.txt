@@ -1,0 +1,13 @@
+Lucie Mugnier
+U87775286
+
+Part I: SQL Injection
+1.0
+username=victim&password=1%27%20OR%20%271%27%3D%271
+    This injection strategy works because the password string is evaluated instead of searched for and it therefore returns a value of true.
+
+1.1
+username=victim&password=%5C%27%20OR%201%3D1%20%20%23
+    Here I used a slightly different format from the first part.  Instead of treating all ‘1’s as strings I said that the password could be 
+	‘ (by escaping) or 1=1 (numbers not strings) which evaluates to true always.  Then I put a comment on the end so the database wouldn’t 
+	get confused by an extra quote.

