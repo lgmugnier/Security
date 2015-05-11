@@ -18,3 +18,5 @@ of in the length extension attack.
 # Basic Web Security
 This directory explores several basic attacks on websites.  First is a series of SQL injection attacks on a form with varying sanitization techniques.  Second, is an XSS attack on a site wth varying defenses.  Third, is an exploration of CSRF attacks.  Finally, I linked back with the MD5 vulnerabilities for a SQL Injection attack on a site that hashes their passwords using MD5.
 
+# Port Scanning Detector
+This is a defensive script.  This is part of a larger IDS using anomoly detection.  Port Scanning, in this case SYN scanning, can be used for locating vulnerable systems and is important to recognize as a plausible recursor to an attack.  This script scans the specified document (not provided for security reasons) for hosts that send three times as many SYN packets as they recieve SYN+ACK packets.
